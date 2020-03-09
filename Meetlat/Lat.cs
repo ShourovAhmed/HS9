@@ -6,14 +6,20 @@ namespace Meetlat
 {
     class Lat
     {
-        public int BeginLengte { private get; set; }
-        public int LengteInM
+        public double BeginLengte { private get; set; }
+        public double LengteInM
         {
-            get;
-
+            get { return BeginLengte; }
         }
-        public int LengteInCm { get; }
-        public int LengteInKm { get; }
-        public int LengteInVoet { get; }
+        public double LengteInCm
+        {
+            get { return (BeginLengte * 100.0); }
+        }
+        public double LengteInKm {
+            get { return (BeginLengte / 1000.0); }
+        }
+        public double LengteInVoet { 
+            get { return (BeginLengte * 3.2808); }
+        }
     }
 }
