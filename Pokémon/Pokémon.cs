@@ -63,10 +63,10 @@ namespace Pokémon
         public int Number { get; set; }
 
         //READ-ONLY
-        public int Average
+        public double Average
         {
             get
-            { return (HP_Base + Attack_Base + Defense_Base + SpecialAttack_Base + SpecialDefense_Base + Speed_Base) / 6; }
+            { return (Total / 6.0); }
         }
         public int Total
         {
@@ -75,7 +75,7 @@ namespace Pokémon
         }
 
         //LEVEL BASED STATS
-        private int level;
+        private int level = 1;
 
         public int Level
         {
@@ -86,14 +86,14 @@ namespace Pokémon
         public int HP_Full
         {
             get
-            { return ((((HP_Base + 50) * Level) / 50) + 10); }
+            { return (((HP_Base + 50) * Level) / 50) + 10; }
         }
 
         public int Attack_Full
         {
             get
             {
-                return (((Attack_Base * Level) / 50) + 5);
+                return ((Attack_Base * Level) / 50) + 5;
             }
         }
 
@@ -101,7 +101,7 @@ namespace Pokémon
         {
             get
             {
-                return (((Defense_Base * Level) / 50) + 5);
+                return ((Defense_Base * Level) / 50) + 5;
             }
         }
 
@@ -109,7 +109,7 @@ namespace Pokémon
         {
             get
             {
-                return (((SpecialAttack_Base * Level) / 50) + 5);
+                return ((SpecialAttack_Base * Level) / 50) + 5;
             }
         }
 
@@ -117,7 +117,7 @@ namespace Pokémon
         {
             get
             {
-                return (((SpecialDefense_Base * Level) / 50) + 5);
+                return ((SpecialDefense_Base * Level) / 50) + 5;
             }
         }
 
@@ -125,7 +125,7 @@ namespace Pokémon
         {
             get
             {
-                return (((Speed_Base * Level) / 50) + 5);
+                return ((Speed_Base * Level) / 50) + 5;
             }
         }
 
@@ -134,6 +134,37 @@ namespace Pokémon
         public void VerhoogLevel()
         {
             Level++;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"{Name} (level {Level})");
+            Console.WriteLine("Base Stats:");
+            Console.WriteLine($"\t* Health = {HP_Base}");
+            Console.WriteLine($"\t* Attack = {Attack_Base}");
+            Console.WriteLine($"\t* Defense = {Defense_Base}");
+            Console.WriteLine($"\t* Special Attack = {SpecialAttack_Base}");
+            Console.WriteLine($"\t* Special Defense = {SpecialDefense_Base}");
+            Console.WriteLine($"\t* Speed = {Speed_Base}");
+            Console.WriteLine("");
+            Console.WriteLine($"\t* Total = {Total}");
+            Console.WriteLine($"\t* Average = {Average:F2}");
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Full Stats:");
+            Console.WriteLine($"\t* Health = {HP_Full}");
+            Console.WriteLine($"\t* Attack = {Attack_Full}");
+            Console.WriteLine($"\t* Defense = {Defense_Full}");
+            Console.WriteLine($"\t* Special Attack = {SpecialAttack_Full}");
+            Console.WriteLine($"\t* Special Defense = {SpecialDefense_Full}");
+            Console.WriteLine($"\t* Speed = {Speed_Full}");
+            Console.WriteLine("");
+            Console.WriteLine($"\t* Total = {Total}");
+            Console.WriteLine($"\t* Average = {Average:F2}");
+
+            Console.WriteLine("\n");
+
         }
 
 
