@@ -45,8 +45,20 @@ namespace Pokémon
             Charmander.ShowInfo();
             Squirtle.ShowInfo();
 
+            for (int i=0; i<100; i++)
+            {
+                Bulbasaur.VerhoogLevel();
+                Charmander.VerhoogLevel();
+                Squirtle.VerhoogLevel();
+            }
 
-        
+            Bulbasaur.ShowInfo();
+            Charmander.ShowInfo();
+            Squirtle.ShowInfo();
+
+
+
+
         }
 
     }
