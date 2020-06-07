@@ -64,6 +64,7 @@ namespace Pokémon_Tester
             Squirtle.ShowInfo();
             */
 
+            //Vervang 1 of beide door 'null' om exceptions uit te testen!
             Pokémon pok1 = GeneratorPokémon("Pok1");
             Pokémon pok2 = GeneratorPokémon("Pok2");
 
